@@ -1,0 +1,58 @@
+<!-- index.html (Login Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSec Portal | Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="terminal-effect"></div>
+  <div class="auth-container">
+    <div class="security-header">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">WebSec Portal</span>
+      </div>
+      <div class="security-status">
+        <span class="status-indicator"></span>
+        <span class="status-text">SECURE CONNECTION</span>
+      </div>
+    </div>
+
+    <div class="auth-forms">
+      <form id="loginForm" class="auth-form active">
+        <h3 class="form-title">SECURE ACCESS</h3>
+        <div class="input-group">
+          <input type="text" id="loginUsername" required>
+          <label for="loginUsername">> username</label>
+          <div class="underline"></div>
+        </div>
+        <div class="input-group">
+          <input type="password" id="loginPassword" required>
+          <label for="loginPassword">> password</label>
+          <div class="underline"></div>
+        </div>
+        <div class="form-footer">
+          <button type="submit" class="auth-btn">
+            <span>Execute Login</span>
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button>
+          <p class="switch-form">No profile? <a href="register.html">Create security profile</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="scanning-animation">
+    <div class="scan-line"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

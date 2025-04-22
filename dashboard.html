@@ -1,0 +1,64 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSec Portal | Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="terminal-effect"></div>
+  <div class="dashboard-container">
+    <div class="security-header">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">WebSec Portal</span>
+      </div>
+      <div class="security-status">
+        <span class="status-indicator"></span>
+        <span class="status-text">ACTIVE SESSION</span>
+      </div>
+    </div>
+
+    <div class="dashboard-content">
+      <h3 class="form-title">SECURITY DASHBOARD</h3>
+      <div class="project-display">
+        <p class="project-title">Web Pentesting Project:</p>
+        <h2>User Authentication & Bypassing Testing</h2>
+        <div class="project-details">
+          <p>Current test session: <span id="loggedInUser"></span></p>
+          <p>Status: <span class="status-active">ACTIVE</span></p>
+        </div>
+      </div>
+      <button id="logoutBtn" class="auth-btn logout-btn">
+        <span>Terminate Session</span>
+        <svg viewBox="0 0 13 10" height="10px" width="15px">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="scanning-animation">
+    <div class="scan-line"></div>
+  </div>
+
+  <script>
+    // Check if logged in
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (!loggedInUser) {
+      window.location.href = "index.html";
+    } else {
+      document.getElementById("loggedInUser").textContent = loggedInUser;
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
